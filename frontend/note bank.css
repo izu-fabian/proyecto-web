@@ -1,0 +1,771 @@
+body{
+    font-family: "Euclid Circular A", "Poppins";
+    background-color: #305991;
+    margin: 0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+}   
+.img-general_ofi{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+.logotipo{
+    padding-left: 855px;
+}
+/* HEADER */
+.header {
+    width: 100%;
+    height: 100%;
+    background-color: #305891ef;
+    display: flex;
+    align-items: center;
+    height: 45px;
+    justify-content: center; /* logo izq – nav centro – botones der */
+    padding: 0.5rem 20px;
+    z-index: 999;
+    position: fixed; /* siempre arriba */
+    top: 0;
+    left: 0;
+}
+
+.header .nav-links{
+    list-style: none;
+    font-size: 20px;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;    
+}
+
+.header .nav-links li:hover,
+/**/.overlay a:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 700;
+    color: #eceff1; 
+}
+
+.header .nav-links a:hover{
+    color: #000000;
+}
+
+
+.header .btn button,
+/**/.header .menu button{
+    margin-left: 20px;
+    font-weight: 700;
+    color: #333;
+    padding: 9px 25px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+.header .btn button:hover,
+/**/.header .menu button:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+@media screen and (max-width: 800px){
+    .nav-links, .btn {
+        display: none;
+    }
+    .menu {
+        display: inherit;
+    }
+}
+
+
+/*Nav Mobile*/
+
+.header a{
+    text-decoration: none;  
+    /*borramos el que teniamos en .header .nav-links a*/ 
+}
+
+.header .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(3, 3, 3, .85);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+}
+
+.header .overlay .overlay-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.header .overlay a{
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 700;
+    color: #eceff1;
+}
+
+.header .overlay a:hover, 
+.header .overlay a:focus{
+    color: #305991;
+}
+
+.header .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 65px;
+}
+
+@media screen and (max-height:450px) {
+    .header .overlay a{
+        font-size: 20px;
+    }
+    .header .overlay .close{
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.contenedor_footer{
+    position: relative;
+    display: flex;
+    z-index: 99;
+}
+
+footer{
+    position: relative;
+    z-index: 0;
+}
+/*menu*/
+
+/* SIDEBAR */
+.sidebar {
+    display: flex;
+    background-color: rgba(199, 205, 209, 0.31);
+    align-items: center;
+    justify-content: space-between; /* menú – redes sociales */
+    width: 100%;
+    position: absolute; /* ya no absolute */
+    margin-top: 0em; /* empuja justo debajo del header */
+    z-index: 5;
+    padding: 10px 0px;
+}
+.social-links{
+    justify-content: end;
+    margin-left:auto;
+    margin-right: 0.5rem;
+    
+}
+.sidebar ol{
+    list-style: none;
+}
+.sidebar ol li{
+    margin: 15px 0;
+}
+.sidebar ol li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-family: 'Arial Narrow';
+}
+.cerrar{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.galeria-menu{
+    display:inline;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    margin-inline-start: 10px;
+
+}
+.imagen-menu{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.imagen-menu:hover::before{
+    opacity: 1;
+    transform: translateY(0);
+}
+/*MODAL CSS USANDO CHECKBOX*/
+input[type="checkbox"]{
+        display: none;
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    z-index: 10;
+}
+.modal-content0{
+    padding: 0px;
+    max-width: 300px;
+    height: 100%;
+    width: 100%;
+    border-radius: 0px;
+    text-align: left;
+    position: relative;
+    font-size: 25px;
+    position: relative;
+    z-index: 0;
+}
+.modal-content0 ol{
+    margin-top: 4rem;
+}
+.modal-content0 img .social-links{
+    max-width: 10%;
+    border-radius: 8px;
+}
+.cerrar{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000000;
+}
+/*Mostrar Modal cuando el checkbox, se encuentre activo*/
+#img0:checked ~ .modal#modal0{
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+h2{
+text-align: right;
+margin: 0 20px;
+font-family:Arial;
+text-decoration: none;
+color: black;
+font-size: 20px;
+}
+
+h1{
+    margin: 0;  
+}
+
+.container{
+    display:flexbox;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+} 
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+/* menu HOME */
+.contenedor {
+    width: flex;
+    height: fit-content;
+    display: flex;
+    flex-direction:column; /* Imagen arriba, semáforo debajo */
+    align-items: center;
+    margin:auto;
+    z-index: 2;
+    position: relative;
+    margin-top: 3.5em;
+
+    }
+.img-general{
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+    z-index: 1;
+    opacity: 0.95;
+}
+.TEXT-BANCO-DE-NOTAS-MENU{
+    color: white;
+    margin-inline: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 48%;
+    margin-top: 4rem;
+}
+.TEXT-BANCO-DE-NOTAS, .TEXT-BANCO-DE-NOTAS2{
+    color: white;
+    position: relative;
+    z-index: 1;
+    margin: 0%;
+    align-self: flex-start;
+}
+.buttom-div-how{
+    display: flex;
+    width: 55%;
+    margin-inline: 100%;
+    position: relative;
+    z-index: 1;
+    margin: 0%;
+}
+.how-it-works {
+    margin:  auto;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    margin-left: 20px;
+    display: flex;
+    background-color: #305991;
+    color: white;
+    opacity: 1;
+    border-radius: 30px; 
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+.how-it-works-two{
+    margin:  auto;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    margin-right: 0px;
+    font-size: 16px;
+    display: flex;
+    background-color: #305991;
+    color: white;
+    opacity: 1;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+.how-it-works-tree{
+    margin:  auto;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    margin-right: 20px;
+    margin-left: 1%;
+    font-size: 16px;
+    display: flex;
+    background-color: #305991;
+    color: white;
+    opacity: 1;
+    border-radius: 5px;
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+/*ICONOS DEL CANDADO Y SOLES*/
+.icon {
+    width: 16px;   
+    height: 16px;
+    margin-right: 8px;  
+    vertical-align: middle;
+}
+.imagen-menu1{
+    margin-left: 100%;
+    margin-right:  10%;
+    position: relative;
+    z-index: 2;
+}
+.img-menu1{
+    width: 55%;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+.boton-buscar{
+    margin: 0%;
+    border-radius: 15px;
+    size-adjust: calc(10px, 20px);
+    background-color: #ffffff;
+    color: black;
+    border: none;
+}
+.boton-buscar:hover{
+    background-color: #000000;
+    color: #f4f4f4;
+}
+.xcontainer-1{
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 4px rgb(49, 49, 49, 0.3);
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+}
+.xcontainer-2{
+    width: min-content;
+    height: fit-content;
+    border-radius: 15px;
+    box-shadow: 3px 3px 2px 1px rgb(49, 49, 49, 0.3);
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: center;
+}
+.input-busqueda{
+    width: 91.8%;
+    padding: 0;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+.img-container{
+    width: 10%;
+    height: 10%;
+    border-radius: 8px;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    position: relative;
+    z-index: 2;
+}
+.xcontainer-text {
+    display: flex;
+    padding-inline: 20px;
+    text-align-last: center ;
+    justify-content: center;
+}
+.xcontainer-text-title{
+    background-color: #000000;
+    color: white;
+    display: flex;
+    padding-inline: 0px;
+    text-align:center;
+    justify-content: center;
+    font-size: 100%;
+}
+.img-menu2{
+    background-color: rgba(0, 0, 0, 0.6) ;
+    width: 60%;
+    display: flex;
+    margin-bottom: 2vw;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 1px 2px 3px rgba(255, 255, 255, 0.6) ;
+}
+.img-container4{
+    width: 28%;
+    height: min-content;
+    padding: 15px;
+}
+.container-menu2{
+    color: white;
+    padding: 5px;
+    align-content:flex-start;
+    display:flexbox;
+}
+.boton-publicar{
+    display:inline;
+    font-size:clamp(0.5vw,0.9vw,1vw);
+    background-color: #305991;
+    color: #f4f4f4;
+    border: none;
+}
+.boton-publicar:hover{
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+/*--------------------------------------------------------------------------------------------------------------------------*/
+.contenedor-menu-doc{
+    width: 60%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 2vw;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    gap: 0px;
+    box-shadow: 0px 1px 2px 3px rgba(255, 255, 255, 0.6) ;
+}
+.enlace_doc{
+    width: fit-content;
+    justify-content: space-around;
+    display: inline-block;
+}
+
+/* Botón */
+.buttom-doc2 {
+    display: inline-block;
+    width: fit-content;       /* que ocupe todo el ancho disponible */
+    height: 15rem;      /* que crezca según el contenedor */
+    padding: 0;
+    margin-block: 1rem;
+    margin-inline: 0.5rem;
+    border: none;
+    background: none;  /* quitamos fondo para que no estorbe */
+    cursor: pointer;
+}
+
+/* Contenedor */
+.item-menu-doc2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden; /* para que nada se salga del borde */
+    box-shadow: 1px 1px 3px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Imagen */
+.img-doc-menu2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* importante: ajusta la imagen al contenedor */
+    display: block;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* Texto (oculto al inicio) */
+.text-doc-menu2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    color: #000000;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+    padding: 20px;      
+    box-sizing: border-box; 
+}
+.text-doc-menu2 h4 {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin: 5%;
+    width: 100%;
+}
+
+.text-doc-menu2 h6 {
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    margin: 5%;
+    width: 100%;
+}
+/* Hover */
+.item-menu-doc2:hover .img-doc-menu2 {
+    filter: brightness(0.7);
+    transform: scale(1.05);
+}
+
+.item-menu-doc2:hover .text-doc-menu2 {
+    opacity: 1;
+}
+.img-doc-menu2{
+    opacity: 1000;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+.calificacion_studypool {
+    width: 100%;
+    display: flex;                /* activa flexbox */
+    flex-direction: row;          /* fila horizontal */
+    justify-content: space-around;/* espacio entre imágenes */
+    align-items: center;          /* centra verticalmente */
+    height: 5rem;
+    background-color: #00000077;
+    box-shadow: 0px 0px 7px 2.5px rgba(255, 255, 255, 0.6);
+    position: relative;
+    z-index: 5;
+}
+
+.calificacion_studypool img {
+    max-width: 10em;
+    max-height: 70%; 
+    transition: transform 0.3s ease-in-out;
+    cursor: auto;
+}
+
+.calificacion_studypool img:hover {
+    transform: scale(2.3);
+    z-index: 6;
+    position: relative;
+}
+.contenedor_doc2{
+    display:flex;
+    justify-content:space-evenly;
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 18rem;
+}
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Fondo */
+.img-general2 {
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: 0;        /* detrás del banner */
+  opacity: 0.1;      /* semitransparente */
+  object-fit: cover; /* opcional: que se ajuste al contenedor */
+}
+
+/* Fondo aplicado al contenedor */
+.a_img_banner {
+  width: 100%;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*background: url("IMAGENES SEPTIEMBRE/img_menu_general.jpg") no-repeat center center;*/
+  background-size: cover;
+  position: relative;
+}
+
+/* Banner */
+.banner-full {
+  position: relative;
+  width: 60%;
+  height: 90%;
+  overflow: hidden;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+/* Slides */
+.banner-full .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: fade 15s infinite;
+}
+
+.banner-full .slide:nth-child(1) { animation-delay: 0s; }
+.banner-full .slide:nth-child(2) { animation-delay: 5s; }
+.banner-full .slide:nth-child(3) { animation-delay: 10s; }
+
+.banner-full .banner-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animación */
+@keyframes fade {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  30%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Banner con imágenes */
+
+    #banner a {
+    display: none;
+    }
+    #banner a.activa {
+    display: block;
+    }/*
+    .imagen-banner {
+    width: 80%;      
+    height: fit-content;      
+    display: block;
+    object-fit: cover;
+    border: white;   
+    margin-bottom: 20px;
+    position: absolute;    
+    }*/
+
+
+  /* Botón centrado */
+    button {
+    margin:  auto;
+    padding: 10px 20px;
+    margin-top: auto;
+    font-size: 16px;
+    display: flex;
+    background-color: #000000;
+    color: white;
+    opacity: 1;
+    border-radius: 5px;
+    }
+    button:hover{
+        background-color: #f4f4f4;
+        color: #000000;
+        opacity: 1;
+    }
+
+
+  /* Semáforo debajo de la imagen */
+    
+    #semaforo {
+    display:flex;
+    background: #000000;
+    padding: 30px;
+    padding-left: 600px;
+    justify-content: center;
+    position: absolute;
+    }
+    .luz {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    border-radius: 0%;
+    margin-left: 20px;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+    }
+    .luz.activa {
+    opacity: 1;
+    }   
