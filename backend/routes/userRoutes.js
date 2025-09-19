@@ -38,8 +38,8 @@ router.post("/", async (req, res) => {
       password,
     });
 
-    await newUser.save(); // guarda en MongoDB Atlas
-    res.status(201).json(newUser); // responde al frontend con los datos guardados
+    await newUser.save(); 
+    res.status(201).json(newUser); 
   } catch (err) {
     console.error("❌ Error al crear usuario:", err);
     res.status(400).json({ error: "Error al crear usuario" });
