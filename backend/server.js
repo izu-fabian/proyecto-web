@@ -2,7 +2,7 @@ require('dotenv').config({ path: __dirname + '/.env' });
 const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 5000;
 
-console.log("MONGO_URL desde .env:", MONGO_URI);
+console.log("MONGO_URL desde .env:", MONGO_URL);
 
 const express = require('express');
 const mongoose = require('mongoose');
