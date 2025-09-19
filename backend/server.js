@@ -1,5 +1,5 @@
 require('dotenv').config({ path: __dirname + '/.env' });
-const MONGO_URI = process.env.MONGO_URL;
+const MONGO_URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 5000;
 
 console.log("MONGO_URL desde .env:", MONGO_URI);
@@ -11,7 +11,7 @@ const path = require('path');
 const app = express();
 
 // Conexión a MongoDB
-mongoose.connect(MONGO_URI)
+mongoose.connect(MONGO_URL)
   .then(() => console.log("✅ Conectado a MongoDB"))
   .catch(err => console.error("❌ Error de conexión a Mongo:", err));
 
