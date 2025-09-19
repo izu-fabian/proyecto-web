@@ -1,5 +1,5 @@
 require('dotenv').config({ path: __dirname + '/.env' });
-const MONGO_URI = process.env.MONGO_URL; // <- usa MONGO_URL
+const MONGO_URI = process.env.MONGO_URL;
 const PORT = process.env.PORT || 5000;
 
 console.log("MONGO_URI desde .env:", MONGO_URI);
