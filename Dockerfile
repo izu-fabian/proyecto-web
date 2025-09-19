@@ -1,20 +1,14 @@
-# Usar Node oficial
-FROM node:18
+FROM node:18-alpine
 
-# Crear directorio de la app
 WORKDIR /usr/src/app
 
-# Copiar package.json y package-lock.json
 COPY package*.json ./
 
-# Instalar dependencias
-RUN npm install
+# Instala todas las dependencias y nodemon globalmente
+RUN npm install && npm install -g nodemon
 
-# Copiar todo el proyecto
 COPY . .
 
-# Exponer el puerto
-EXPOSE 3000
+EXPOSE 5000
 
-# Comando para correr la app
 CMD ["npm", "run", "dev"]
