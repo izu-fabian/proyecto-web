@@ -16,8 +16,28 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   console.log("🚀 Petición POST recibida:", req.body);
   try {
-    const { name, email } = req.body;
-    const newUser = new User({ name, email });
+    const {
+      identificacion,
+      nombre,
+      apellido,
+      telefono,
+      email,
+      rol,
+      status,
+      password,
+    } = req.body;
+
+    const newUser = new User({
+      identificacion,
+      nombre,
+      apellido,
+      telefono,
+      email,
+      rol,
+      status,
+      password,
+    });
+
     await newUser.save(); // guarda en MongoDB Atlas
     res.status(201).json(newUser); // responde al frontend con los datos guardados
   } catch (err) {
