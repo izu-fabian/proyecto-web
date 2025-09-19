@@ -1,17 +1,20 @@
-FROM node:18-alpine
+# Usar Node oficial
+FROM node:18
 
-# Carpeta de trabajo dentro del contenedor
+# Crear directorio de la app
 WORKDIR /usr/src/app
 
-# Copiar package.json e instalar dependencias
+# Copiar package.json y package-lock.json
 COPY package*.json ./
+
+# Instalar dependencias
 RUN npm install
 
-# Copiar el resto del código
+# Copiar todo el proyecto
 COPY . .
 
-# Exponer el puerto del backend
-EXPOSE 5000
+# Exponer el puerto
+EXPOSE 3000
 
-# Comando para iniciar la app
-CMD ["npm", "start"]
+# Comando para correr la app
+CMD ["npm", "run", "dev"]
