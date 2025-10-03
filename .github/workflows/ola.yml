@@ -20,4 +20,4 @@ jobs:
             - name: Listar buckets
               run:  aws s3 ls
             - name: Sync to s3
-              run: aws s3 sync ./ s3://izurieta-joaquin-s3-888577051331  131321321
+              run: aws s3 sync ./ s3://izurieta-joaquin-s3-888577051331
