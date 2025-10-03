@@ -20,5 +20,5 @@ jobs:
             - name: Listar buckets
               run:  aws s3 ls
             - name: Sync to S3
-              run: aws s3 sync ./proyecto-web-main\frontend s3://wirito/proyecto-web-main/
+              run: aws s3 sync frontend s3://wirito/proyecto-web-main/
 
