@@ -38,7 +38,7 @@ Dentro de esta carpeta se encuentran las rutas, controladores y configuraciones 
 Autores
 ============================================================
 
-- [Tu Nombre] – Desarrollador principal
+- [izu-fabian] – Desarrollador principal
   
 [SETUP.txt](https://github.com/user-attachments/files/22690903/SETUP.txt)
 # Procedimiento para levantar el proyecto
