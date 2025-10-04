@@ -45,8 +45,8 @@ Autores
 # Procedimiento para levantar el proyecto
 
 1. Clonar el repositorio
-   git clone https://github.com/usuario/repositorio.git
-   cd repositorio
+   git clone https://github.com/izu-fabian/proyecto-web.git
+   cd proyecto-web
 
 2. Instalar dependencias (Ejemplo con Node.js)
    npm install
