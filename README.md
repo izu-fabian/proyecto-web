@@ -39,7 +39,8 @@ Autores
 ============================================================
 
 - [izu-fabian] – Desarrollador principal
-  
+- [guillermO556] – Desarrollador principal
+- [guillermO556] – Desarrollador principal  
 [SETUP.txt](https://github.com/user-attachments/files/22690903/SETUP.txt)
 # Procedimiento para levantar el proyecto
 
