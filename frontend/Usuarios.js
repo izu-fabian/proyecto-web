@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userId: usuarioLogueado.id })
         });
-        const data = await res.json();
-
+        const data = await res.json(); 
+        
         btn.textContent = data.siguiendo.includes(u._id.toString()) ? "Siguiendo" : "Seguir";
 
         // Actualizar usuario logueado en localStorage
