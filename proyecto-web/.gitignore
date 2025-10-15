@@ -1,0 +1,11 @@
+# Ignorar dependencias
+node_modules/
+jspm_packages/
+# Ignorar variables privadas
+.env
+
+# Ignorar logs y caché
+*.log
+__pycache__/
+.DS_Store
+

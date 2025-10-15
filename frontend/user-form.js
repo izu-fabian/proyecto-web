@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("user-form");
+  const mensaje = document.getElementById("mensaje");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -17,16 +18,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = { identificacion, nombre, apellido, telefono, email, rol, status, password };
 
     try {
-      await fetch("/api/users", {
+      // Crear usuario
+      const res = await fetch("/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
       });
 
-      form.reset(); // limpia el formulario
-      console.log("✅ Usuario guardado correctamente");
+      if (!res.ok) throw new Error("Error al registrar usuario");
+
+      // Login automático
+      const loginRes = await fetch("/api/users/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+
+      const loginData = await loginRes.json();
+
+      if (!loginRes.ok) throw new Error(loginData.message || "Error al iniciar sesión");
+
+      // Guardar sesión en localStorage
+      localStorage.setItem("usuarioLogueado", JSON.stringify(loginData.user));
+
+      // Mensaje y redirección
+      mensaje.textContent = "Usuario creado y login automático ✅";
+      mensaje.className = "exito";
+      setTimeout(() => {
+        window.location.href = "perfil_user.html";
+      }, 1500);
+
+      form.reset();
+
     } catch (err) {
-      console.error("❌ Error al registrar usuario:", err);
+      console.error(err);
+      mensaje.textContent = err.message || "Error de conexión ❌";
+      mensaje.className = "error";
     }
   });
 });

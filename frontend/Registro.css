@@ -1,0 +1,141 @@
+/* Fondo general */
+body {
+  background-color: #1f1a17;
+  color: #e8e3de;
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 40px 0;
+}
+
+/* Botones superiores */
+div[style*="justify-content: space-between"] {
+  width: 70%;
+  margin: 0 auto 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div[style*="justify-content: space-between"] button {
+  background: none;
+  color: #c0a98a;
+  border: 1px solid #c0a98a;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+div[style*="justify-content: space-between"] button:hover {
+  background-color: #c0a98a;
+  color: #1f1a17;
+}
+
+/* Tabla contenedora */
+form table {
+  width: 70%;
+  background-color: #2b2420;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  color: #e8e3de;
+}
+
+/* Quita bordes de la tabla original */
+form table,
+form td,
+form th {
+  border: none;
+}
+
+/* Cabecera */
+form h2 {
+  margin: 0;
+  color: #d1b38c;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+form small {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #b0a295;
+  margin-bottom: 10px;
+}
+
+/* Etiquetas y campos */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #d6c4b1;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #57483f;
+  border-radius: 6px;
+  background-color: #1f1a17;
+  color: #f2ede8;
+  outline: none;
+  transition: border-color 0.3s;
+  font-size: 0.95rem;
+}
+
+input:focus, select:focus {
+  border-color: #c0a98a;
+}
+
+/* Botones inferiores */
+form button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+form button[type="submit"] {
+  background-color: #c0a98a;
+  color: #1f1a17;
+}
+
+form button[type="submit"]:hover {
+  background-color: #d4bfa3;
+}
+
+form button[type="reset"] {
+  background-color: transparent;
+  border: 1px solid #c0a98a;
+  color: #c0a98a;
+}
+
+form button[type="reset"]:hover {
+  background-color: #3a3029;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 0;
+  }
+
+  form table {
+    width: 90%;
+  }
+
+  input, select {
+    font-size: 0.9rem;
+  }
+
+  div[style*="justify-content: space-between"] {
+    width: 90%;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}

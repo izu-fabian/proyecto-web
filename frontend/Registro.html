@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>New User</title>
+  <link rel="stylesheet" href="Registro.css">
+</head>
+<body>
+
+  <div style="width: 70%; margin: 20px auto; display: flex; justify-content: space-between;">
+    <button type="button" onclick="window.history.back()">← Atrás</button>
+    <button type="button" onclick="window.location.href='index.html'">Volver al inicio →</button>
+  </div>
+
+  <!-- Formulario -->
+  <form id="user-form" method="post">
+    <table width="70%" align="center" cellpadding="15" cellspacing="2" border="1">
+      <tr>
+        <td colspan="2" style="padding:12px;">
+          <h2 style="margin:0;">NEW USER</h2>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <small>Todos los campos son obligatorios</small>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <label for="identificacion">Identificación</label><br>
+          <input id="identificacion" name="identificacion" type="text" required size="80">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="nombre">Nombre</label><br>
+          <input id="nombre" name="nombre" type="text" required size="40">
+        </td>
+        <td>
+          <label for="apellido">Apellido</label><br>
+          <input id="apellido" name="apellido" type="text" required size="40">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="telefono">Teléfono</label><br>
+          <input id="telefono" name="telefono" type="tel" required size="40">
+        </td>
+        <td>
+          <label for="email">E-mail</label><br>
+          <input id="email" name="email" type="email" required size="40">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="rol">Rol usuario</label><br>
+          <select id="rol" name="rol" required>
+            <option value="administrador">Administrador</option>
+            <option value="usuario">Usuario</option>
+            <option value="invitado">Invitado</option>
+          </select>
+        </td>
+        <td>
+          <label for="status">Status</label><br>
+          <select id="status" name="status" required>
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <label for="password">Password</label><br>
+          <input id="password" name="password" type="password" required size="80">
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <button type="submit">Guardar</button>
+          <button type="reset">Cancelar</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+<p id="mensaje"></p>
+
+  <script src="user-form.js"></script>
+</body>
+</html>
